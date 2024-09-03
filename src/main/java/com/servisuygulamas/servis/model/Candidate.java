@@ -1,6 +1,8 @@
 package com.servisuygulamas.servis.model;
 
 
+import com.servisuygulamas.servis.enums.Yetki;
+
 public class Candidate {
     private Long userid;
     private String ad;
@@ -12,6 +14,6 @@ public class Candidate {
     private String istenCikisTarihi;
     private String sirketIsmi;
     private String telefon;
-    private Integer yetki;
+    private Yetki yetki;
 
 }

@@ -1,28 +1,25 @@
 package com.servisuygulamas.servis.controller;
 
-import com.servisuygulamas.servis.dto.CandidateDTO;
-import com.servisuygulamas.servis.model.Candidate;
-import com.servisuygulamas.servis.servis.CvHavuzuClientService;
+import com.servisuygulamas.servis.dto.ToDoDTO;
+import com.servisuygulamas.servis.servis.ToDoClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/api/cv")
-public class CvHavuzuClientController {
+@RequestMapping("/todo")
+public class ToDoClientController {
 
     @Autowired
-    private CvHavuzuClientService cvHavuzuClientService;
+    private ToDoClientService toDoClientService;
 
+    @PostMapping("/ekle")
+    public ToDoDTO createToDoDTO(@RequestBody ToDoDTO toDoDTO) {
+        return toDoClientService.createToDo(toDoDTO);
+    }
+/*
     @GetMapping("/candidates/{id}")
     public Mono<CandidateDTO> getCandidate(@PathVariable Long id) {
         return cvHavuzuClientService.getCandidate(id);
-    }
-
-    @PostMapping("/candidates")
-    public Mono<Candidate> createCandidate(@RequestBody Candidate candidate) {
-        return cvHavuzuClientService.createCandidate(candidate);
     }
 
     @DeleteMapping("/candidates/{id}")
@@ -30,8 +27,8 @@ public class CvHavuzuClientController {
         return cvHavuzuClientService.deleteCandidate(id);
     }
     @GetMapping("/candidates")
-    public Flux<CandidateDTO> getAllCandidates() {
+    public Mono<List<CandidateDTO>> getAllCandidates() {
         return cvHavuzuClientService.getAllCandidates();
-    }
+    }*/
 
 }

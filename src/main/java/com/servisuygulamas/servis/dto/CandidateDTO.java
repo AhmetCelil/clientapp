@@ -1,5 +1,6 @@
 package com.servisuygulamas.servis.dto;
 
+import com.servisuygulamas.servis.enums.Yetki;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,6 +19,6 @@ public class CandidateDTO {
     private String sirketIsmi;
     private String soyad;
     private String telefon;
-    private Integer yetki;
+    private Yetki yetki;
     private KisiselGelisimDTO kisiselGelisim;
 }
